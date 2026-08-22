@@ -2,6 +2,31 @@
 
 This clone is [erik-sn/skills](https://github.com/erik-sn/skills), forked from [mattpocock/skills](https://github.com/mattpocock/skills). Upstream skills stay as Matt ships them. Personal behaviour is a new skill under `skills/personal/` that augments an upstream one. Call the Skill tool with "overlay-skill" for that procedure.
 
+The top-level `README.md` is Matt's install story (official Claude plugin, `npx skills add mattpocock/skills`). Use this file instead. The official plugin does not ship `skills/personal/`.
+
+## Initial setup
+
+On each machine:
+
+```bash
+git clone git@github.com:erik-sn/skills.git
+cd skills
+bash scripts/link-skills.sh
+bash scripts/install-morning-cron.sh
+```
+
+`link-skills.sh` symlinks every skill (including overlays) into `~/.claude/skills` and `~/.agents/skills`. Cursor reads those directories. The morning installer is idempotent: existing config and schedule are left alone.
+
+Once per GitHub repo (already done on this fork), after `sync-upstream.yml` is on `origin/main`:
+
+```bash
+bash scripts/setup-personal-fork.sh
+```
+
+That disables the inherited Release workflow, enables nightly Sync upstream, and installs the morning pull if this machine has no schedule yet. Leftover-conflict auto-resolve is optional: `bash scripts/setup-anthropic-key.sh` when you have an Anthropic key.
+
+Do not also install `mattpocock-skills` from the official marketplace on the same machine if you want the overlays: you would have Matt's grilling and this fork's at once.
+
 ## Why overlays
 
 The nightly job merges `mattpocock/skills` into this repo. An edited upstream `SKILL.md` becomes a merge conflict every time Matt touches the same file. A new path under `skills/personal/` does not.
