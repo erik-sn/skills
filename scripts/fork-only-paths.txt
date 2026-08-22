@@ -1,0 +1,17 @@
+# Fork-only paths
+
+One path prefix per line. A conflicted path that equals a prefix, or sits under it, is fork-only: mechanical resolve keeps ours. Everything else takes theirs.
+
+# Keep this list in sync when adding fork-only files. FORK.md points here.
+
+FORK.md
+.cursor
+skills/personal
+.github/workflows/sync-upstream.yml
+scripts/fork-only-paths.txt
+scripts/sync-upstream.sh
+scripts/resolve-merge-leftovers.py
+scripts/pull-and-relink.sh
+scripts/install-morning-cron.sh
+scripts/setup-personal-fork.sh
+scripts/setup-anthropic-key.sh

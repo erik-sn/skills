@@ -1,0 +1,3 @@
+interface:
+  display_name: "Overlay Skill"
+  short_description: "Augment an upstream skill without editing it"

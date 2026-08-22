@@ -1,0 +1,10 @@
+---
+description: Personal fork of mattpocock/skills. Overlays instead of editing upstream skills.
+alwaysApply: true
+---
+
+This is a personal fork of mattpocock/skills. Read `FORK.md` before adding or editing skills.
+
+When a change would touch an upstream skill, README, AGENTS.md, plugin manifest, or docs page, call the Skill tool with "overlay-skill" and write a new skill under `skills/personal/` instead.
+
+When `grill-me` or `grilling` runs, call the Skill tool with "overlay-grilling" and apply that overlay. `/grill-me` stays the command; the overlay is how rounds are written.
