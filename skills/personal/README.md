@@ -6,3 +6,5 @@ When a change would otherwise edit an upstream skill, create an overlay here ins
 
 - **[overlay-skill](./overlay-skill/SKILL.md)**: Write a new skill that augments an upstream one instead of editing it. Model-invoked.
 - **[overlay-grilling](./overlay-grilling/SKILL.md)**: Grilling overlay: TLDR each round, shuffled options, no filler choices. Silent over `grilling` / `grill-me`. Model-invoked.
+- **[work](./work/SKILL.md)**: Drive one ticket from spec to pushed PR, writing a ticket bundle that traces the work to its sessions, spec, and review. User-invoked.
+- **[review](./review/SKILL.md)**: Independently review a ticket's PR in a fresh session and write the findings into its bundle. User-invoked.
