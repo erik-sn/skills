@@ -23,17 +23,22 @@ Use this template for writing the PR body:
 
 ## Merge Danger
 
-**Door:** one-way or two-way
-**Blast Radius:** <potential ramifications of merge>
+**Door:** <one-way or two-way>
+
+<optional: description>
+
+**Blast Radius:** <one-word description>
+
+<optional: potential ramifications of merge>
 ```
 
 ## Sections
 
-Be concise. Optimise for information density and review speed. Communicate the why, not just the how. Use the user's domain language from `CONTEXT.md`.
+Skip all preambles and keep prose brief. Use the user's domain language from `CONTEXT.md`.
 
 ### Summary
 
-Pick the smallest view that makes the shape of the change land, embedded directly in the body.
+Pick the smallest view that makes the key point clear.
 
 - Show logic or an algorithm as pseudocode:
 
@@ -133,7 +138,7 @@ For a state or control-flow change:
 +  invalidate cache
 ```
 
-- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the reviewer needs a copyable target shape:
+- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the user needs a copyable target shape:
 
 ```ts
 function expandSkill(command: string): string {
@@ -142,7 +147,11 @@ function expandSkill(command: string): string {
 }
 ```
 
-Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to make the change clear to a reviewer. Use one, occasionally two; never all of them.
+#### Guidance
+
+Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to answer the user's current question or the options to resolve the current discussion point.
+
+You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the user.
 
 ### Evidence
 
@@ -150,7 +159,7 @@ Concrete evidence that the change works. Show a before and after.
 
 Screenshots are S-tier - when the environment is set up for it and the change is visual.
 
-Execution-based evidence is A-tier. Test results, console output. Show the exact steps taken and the outcomes observed.
+Execution-based evidence is A-tier. Test results, console output. Show the exact test that now fails and passes, using pseudocode.
 
 ### Merge Danger
 
